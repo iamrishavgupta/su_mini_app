@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "baseBuilder": {
+    "ownerAddress": "0x0EC8f455AFBE870092B0e65165FffFeE8c29C688"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Sudoku Mini App",
+    "homeUrl": "https://your-app-url.vercel.app",
+    "iconUrl": "https://your-app-url.vercel.app/icon.png",
+    "description": "Play Sudoku directly inside Farcaster!"
+  }
+}
