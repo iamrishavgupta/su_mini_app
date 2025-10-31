@@ -1,10 +1,17 @@
 'use client';
-import { useState, useEffect } from 'react';
 
-const Sudoku = () => {
+import { useEffect, useState } from 'react';
+import { sdk } from '@farcaster/miniapp-sdk';
+
+export default function SudokuMiniApp() {
   const [board, setBoard] = useState<number[][]>([]);
   const [originalBoard, setOriginalBoard] = useState<number[][]>([]);
   const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('easy');
+
+  // --- Initialize Farcaster Mini App SDK ---
+  useEffect(() => {
+    sdk.actions.ready();
+  }, []);
 
   // --- Utility Functions ---
   const isValid = (board: number[][], row: number, col: number, num: number) => {
@@ -24,7 +31,7 @@ const Sudoku = () => {
   const generateSolvedBoard = () => {
     const board = Array(9).fill(0).map(() => Array(9).fill(0));
 
-    const fillBoard = () => {
+    const fillBoard = (): boolean => {
       for (let row = 0; row < 9; row++) {
         for (let col = 0; col < 9; col++) {
           if (board[row][col] === 0) {
@@ -88,7 +95,9 @@ const Sudoku = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-indigo-800 text-white p-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">🧩 Sudoku Mini App</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
+        🧩 Sudoku Mini App
+      </h1>
 
       <div className="flex flex-col sm:flex-row items-center gap-3 mb-5">
         <select
@@ -133,6 +142,4 @@ const Sudoku = () => {
       </p>
     </div>
   );
-};
-
-export default Sudoku;
+}
