@@ -10,8 +10,8 @@
   "miniapp": {
     "version": "1",
     "name": "Sudoku Mini App",
-    "homeUrl": "https://your-app-url.vercel.app",
-    "iconUrl": "https://your-app-url.vercel.app/icon.png",
+    "homeUrl": "https://su-mini-app-rishavs-projects-9790c9c6.vercel.app/",
+    "iconUrl": "https://su-mini-app-rishavs-projects-9790c9c6.vercel.app//icon.png",
     "description": "Play Sudoku directly inside Farcaster!"
   }
 }
